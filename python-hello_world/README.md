@@ -1,6 +1,6 @@
 ## Tasks
 
-### 3.
+### 0.
 
 Write a Python script that prints exactly `"Programming is like building a multilingual puzzle`, followed by a new line.
 
@@ -12,7 +12,7 @@ guillaume@ubuntu:~/py/$
 ```
 
 
-### 4.
+### 1.
 
 Complete this [source code](https://github.com/hs-hq/0x00.py/blob/master/3-print_number.py "source code") in order to print the integer stored in the variable `number`, followed by `Battery street`, followed by a new line.
 
@@ -30,7 +30,7 @@ guillaume@ubuntu:~/py/0x00$
 ```
 
 
-### 5.
+### 2.
 
 Complete the source code in order to print the float stored in the variable `number` with a precision of 2 digits.
 
@@ -47,7 +47,7 @@ guillaume@ubuntu:~/py/0x00$
 ```
 
 
-### 6.
+### 3.
 
 Complete this [source code](https://github.com/hs-hq/0x00.py/blob/master/5-print_string.py "source code") in order to print 3 times a string stored in the variable `str`, followed by its first 9 characters.
 
@@ -67,7 +67,7 @@ guillaume@ubuntu:~/py/$
 ```
 
 
-### 7.
+### 4.
 
 Complete this [source code](https://github.com/hs-hq/0x00.py/blob/master/6-concat.py "source code") to print `Welcome to Holberton School!`
 
@@ -84,7 +84,7 @@ guillaume@ubuntu:~/py/$
 ```
 
 
-### 8.
+### 5.
 
 Complete this [source code](https://github.com/hs-hq/0x00.py/blob/master/7-edges.py "source code")
 
@@ -105,7 +105,7 @@ guillaume@ubuntu:~/py/$
 ```
 
 
-### 9.
+### 6.
 
 Complete this [source code](https://github.com/hs-hq/0x00.py/blob/master/8-concat_edges.py "source code") to print `object-oriented programming with Python`, followed by a new line.
 
@@ -123,7 +123,7 @@ guillaume@ubuntu:~/py/$
 ```
 
 
-### 10.
+### 7.
 
 Write a Python script that prints “The Zen of Python”, by TimPeters, followed by a new line.
 
