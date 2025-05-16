@@ -4,7 +4,9 @@
     and return the result as an integer.
 """
 
+
 def add_integer(a, b=98):
+
     """_summary_
 
     Args:
@@ -18,7 +20,6 @@ def add_integer(a, b=98):
     Returns:
         _type_: retourne un int
     """
-
 
     if not isinstance(a, (int, float)):
         raise TypeError("a must be an integer")
