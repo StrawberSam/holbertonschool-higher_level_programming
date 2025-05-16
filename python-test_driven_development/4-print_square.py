@@ -16,8 +16,6 @@ def print_square(size):
         ValueError: size doit être plus grand que 0
         TypeError: size doit être un entier et plus grand que 0
     """
-
-
     if not isinstance(size, int):
         raise TypeError("size must be an integer")
 
