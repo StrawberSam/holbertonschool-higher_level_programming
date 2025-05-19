@@ -21,7 +21,7 @@ class Square:
 
     @property  # Getter
     def size(self):
-        """Lis la valeur d'un attribut privé
+        """Getter de la taille du carré
 
         Returns:
             self.__size: retourne l'attribut privé
@@ -56,9 +56,10 @@ class Square:
             raise TypeError("position must be a tuple of 2 positive integers")
         for x in value:
             if not (isinstance(x, int) and x >= 0):
-                raise ValueError(
+                raise TypeError(
                     "position must be a tuple of 2 positive integers"
                     )
+            self.__position = value
 
     def area(self):
         """
