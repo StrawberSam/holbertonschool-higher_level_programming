@@ -16,8 +16,8 @@ class Square:
         Args:
             size (_type_): sert à définir la taille du carré
         """
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property  # Getter
     def size(self):
