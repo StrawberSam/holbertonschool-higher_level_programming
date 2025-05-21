@@ -68,7 +68,6 @@ class Rectangle:
     def square(cls, size=0):
         return cls(size, size)
 
-
     def __str__(self):
         result = ""
 
@@ -101,4 +100,3 @@ class Rectangle:
             return rect_1
         if rect_1.area() < rect_2.area():
             return rect_2
-
