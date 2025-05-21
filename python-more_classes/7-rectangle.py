@@ -78,7 +78,8 @@ class Rectangle:
         return result
 
     def __repr__(self):
-        return f"Rectangle({self.width}, {self.height}, symbol='{self.print_symbol}')"
+        return (f"Rectangle({self.width}, "
+                f"{self.height}, symbol='{self.print_symbol}')")
 
     def __del__(self):
         Rectangle.number_of_instances -= 1
