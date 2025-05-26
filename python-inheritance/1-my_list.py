@@ -1,6 +1,8 @@
-#/!usr/bin/python3
-""" function that prints the list, but sorted (ascending sort)
+#!/usr/bin/python3
+"""function that prints the list, but sorted (ascending sort)
     """
+
+
 class MyList(list):
     """prints the list, but sorted (ascending sort)
 
