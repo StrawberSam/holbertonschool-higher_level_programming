@@ -1,0 +1,67 @@
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> bg = BaseGeometry()
+
+# 🔍 Vérifie que bg est bien une instance de BaseGeometry
+>>> isinstance(bg, BaseGeometry)
+True
+
+# 🧪 Vérifie que le nom de la classe est bien 'BaseGeometry'
+>>> type(bg).__name__
+'BaseGeometry'
+
+# 📛 Test de la méthode area (qui n'est pas encore implémentée)
+>>> bg.area()
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
+
+# 🧪 Test : appel sans arguments => doit lever une erreur
+>>> bg.integer_validator()
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+# ✅ Test avec une valeur valide
+>>> bg.integer_validator("width", 10)
+
+# ❌ Test avec une chaîne de caractères comme valeur
+>>> bg.integer_validator("poids", "lourd")
+Traceback (most recent call last):
+...
+TypeError: poids must be an integer
+
+# ❌ Test avec (None, None) → name est un string, donc pas bloquant, mais value n'est pas un int
+>>> bg.integer_validator(None, None)
+Traceback (most recent call last):
+...
+TypeError: None must be an integer
+
+# ❌ Test avec valeur = 0
+>>> bg.integer_validator("size", 0)
+Traceback (most recent call last):
+...
+ValueError: size must be greater than 0
+
+# ❌ Test avec un booléen (True est considéré comme un int en Python, attention !)
+>>> bg.integer_validator("actif", True)
+Traceback (most recent call last):
+...
+TypeError: actif must be an integer
+
+# ❌ Test avec une liste
+>>> bg.integer_validator("collection", [1, 2, 3])
+Traceback (most recent call last):
+...
+TypeError: collection must be an integer
+
+# ❌ Test avec un set
+>>> bg.integer_validator("name", {1})
+Traceback (most recent call last):
+...
+TypeError: name must be an integer
+
+# ❌ Test avec un tuple
+>>> bg.integer_validator("ensemble", (1, 2))
+Traceback (most recent call last):
+...
+TypeError: ensemble must be an integer
