@@ -12,7 +12,13 @@ class BaseGeometry:
     représentant des formes géométriques spécifiques.
     """
 
+
 class Rectangle(BaseGeometry):
+    """class Rectangle that inherits from BaseGeometry
+
+    Args:
+        BaseGeometry (class): inherits class
+    """
 
     def __init__(self, width, height):
         self.__width = self.integer_validator("width", width)
