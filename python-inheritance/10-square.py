@@ -6,6 +6,7 @@ Cette classe servira de base pour définir des formes géométriques.
 
 Rectangle = __import__('9-rectangle').Rectangle
 
+
 class Square(Rectangle):
     """Module contenant la classe Square, héritant de Rectangle.
     Cette classe servira de base pour définir des formes géométriques.
