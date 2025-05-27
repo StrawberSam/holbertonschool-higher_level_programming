@@ -37,4 +37,4 @@ class Square(Rectangle):
         Returns:
             return en f-string
         """
-        return f"[Square] {self._width}/{self.__height}"
+        return f"[Square] {self.__size}/{self.__size}"
