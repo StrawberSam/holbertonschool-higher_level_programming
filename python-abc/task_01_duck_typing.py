@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+    Classe abstraite représentant une forme géométrique.
+    Classe représentant un cercle.
+    Classe représentant un rectangle.
+    """
 from abc import ABC, abstractmethod
 from math import pi
 
