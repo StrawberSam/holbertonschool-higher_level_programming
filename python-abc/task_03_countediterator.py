@@ -57,3 +57,12 @@ class CountedIterator:
         self.counter += 1
         item = next(self.iteratorobject)
         return item
+
+    def __iter__(self):
+        """
+        Return the iterator object itself.
+
+        Returns:
+            CountedIterator: self
+        """
+        return self
