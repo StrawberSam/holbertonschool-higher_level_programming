@@ -33,7 +33,7 @@ class CountedIterator:
             iteratorobject: Un objet itérable à parcourir.
         """
         self.iteratorobject = iter(iteratorobject)
-        self.counter = 0
+        self.counter = abs(0)
 
     def get_count(self):
         """
