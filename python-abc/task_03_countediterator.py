@@ -44,6 +44,15 @@ class CountedIterator:
         """
         return self.counter
 
+    def __iter__(self):
+        """
+        Return the iterator object itself.
+
+        Returns:
+            CountedIterator: self
+        """
+        return self
+
     def __next__(self):
         """
         Retourne le prochain élément de l’itérateur et incrémente le compteur.
@@ -54,15 +63,6 @@ class CountedIterator:
         Raises:
             StopIteration: Lorsque l’itérateur d’origine est épuisé.
         """
-        self.counter += 1
         item = next(self.iteratorobject)
+        self.counter += 1
         return item
-
-    def __iter__(self):
-        """
-        Return the iterator object itself.
-
-        Returns:
-            CountedIterator: self
-        """
-        return self
