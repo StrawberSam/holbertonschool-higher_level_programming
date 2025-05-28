@@ -101,11 +101,9 @@ def shape_info(shape):
     print("Area:", shape.area())
     print("Perimeter:", shape.perimeter())
 
-if __name__ == "__main__":
+
     c = Circle(5)
     r = Rectangle(4, 6)
 
-    print("Circle info:")
     shape_info(c)
-    print("\nRectangle info:")
     shape_info(r)
