@@ -2,11 +2,13 @@
 from abc import ABC, abstractmethod
 from math import pi
 
+
 class Shape(ABC):
     """
     Classe abstraite représentant une forme géométrique.
 
-    Cette classe définit l'interface commune que toutes les formes doivent implémenter.
+    Cette classe définit l'interface commune
+    que toutes les formes doivent implémenter.
     """
 
     @abstractmethod
@@ -24,6 +26,7 @@ class Shape(ABC):
         Doit être implémentée par les sous-classes.
         """
         pass
+
 
 class Circle(Shape):
     """
@@ -55,6 +58,7 @@ class Circle(Shape):
         Formule : 2 x π x r
         """
         return 2 * pi * self.radius
+
 
 class Rectangle(Shape):
     """
@@ -90,6 +94,7 @@ class Rectangle(Shape):
         """
         return (self.width + self.height) * 2
 
+
 def shape_info(shape):
     """
     Affiche les informations d'une forme (surface et périmètre).
@@ -100,10 +105,3 @@ def shape_info(shape):
     """
     print("Area:", shape.area())
     print("Perimeter:", shape.perimeter())
-
-
-    c = Circle(5)
-    r = Rectangle(4, 6)
-
-    shape_info(c)
-    shape_info(r)
