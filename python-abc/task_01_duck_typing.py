@@ -4,6 +4,8 @@
     Classe représentant un cercle.
     Classe représentant un rectangle.
     """
+
+
 from abc import ABC, abstractmethod
 from math import pi
 
@@ -48,7 +50,7 @@ class Circle(Shape):
         Paramètre :
             radius (float) : le rayon du cercle.
         """
-        self.radius = radius
+        self.radius = abs(radius)
 
     def area(self):
         """
