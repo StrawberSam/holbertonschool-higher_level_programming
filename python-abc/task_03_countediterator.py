@@ -55,4 +55,5 @@ class CountedIterator:
             StopIteration: Lorsque l’itérateur d’origine est épuisé.
         """
         self.counter += 1
-        return next(self.iteratorobject)
+        item = next(self.iteratorobject)
+        return item
