@@ -6,13 +6,15 @@ Ce module contient une fonction qui lit un fichier texte UTF-8
 et affiche son contenu sur la sortie standard.
 """
 
+
 def read_file(filename=""):
     """
     Lit un fichier texte en UTF-8 et affiche son contenu à l'écran.
 
     Args:
-        filename (str): Le chemin du fichier à lire. Doit être une chaîne de caractères.
-                        Par défaut, une chaîne vide.
+        filename (str): Le chemin du fichier à lire.
+        Doit être une chaîne de caractères.
+        Par défaut, une chaîne vide.
 
     Returns:
         None
