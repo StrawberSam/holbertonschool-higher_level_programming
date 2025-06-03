@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 
 """
-Module de gestion de fichiers permettant d'ajouter du texte à un fichier existant.
+Module de gestion de fichiers permettant d'ajouter du texte
+à un fichier existant.
 
 Ce module contient une fonction principale :
 - append_write : ouvre un fichier en mode ajout et y écrit du texte.
