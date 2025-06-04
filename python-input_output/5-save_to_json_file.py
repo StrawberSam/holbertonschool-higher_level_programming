@@ -3,7 +3,6 @@
 Ce module fournit une fonction pour enregistrer un objet
 Python dans un fichier texte, en utilisant une représentation JSON.
 """
-
 import json
 
 
@@ -21,6 +20,5 @@ def save_to_json_file(my_obj, filename):
         Elle n’effectue pas non plus de gestion des erreurs liées aux
         permissions de fichiers.
     """
-    json_file = json.dumps(my_obj)
     with open(filename, "w", encoding="utf-8") as file:
-        file.write(json_file)
+        json.dump(my_obj, file)
