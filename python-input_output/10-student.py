@@ -35,7 +35,7 @@ class Student:
             l'étudiant.
         """
 
-        if isinstance(attrs, list) or attrs is None:
+        if not isinstance(attrs, list) or attrs is None:
             return self.__dict__
         else:
             new_dic = {}
