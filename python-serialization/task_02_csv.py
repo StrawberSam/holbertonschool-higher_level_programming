@@ -21,7 +21,7 @@ def convert_csv_to_json(filename):
     """
     try:
         with open(filename, "r", encoding="utf-8") as file:
-            reader = csv.DictReader(file)  # ✅ Correction ici
+            reader = csv.DictReader(file)
             data_list = []
 
             for ligne in reader:
