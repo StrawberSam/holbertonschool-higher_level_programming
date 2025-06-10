@@ -66,7 +66,7 @@ class HandlerRequests(http.server.BaseHTTPRequestHandler):
             self.send_header("Content-Type", "application/json")
             self.end_headers()
 
-            status_response = {"Status" : "OK"}
+            status_response = {"Status": "OK"}
             json_status_response = json.dumps(status_response)
             self.wfile.write(json_status_response.encode('utf-8'))
 
