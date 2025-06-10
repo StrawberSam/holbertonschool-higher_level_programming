@@ -1,4 +1,15 @@
 #!/usr/bin/python3
+"""
+Ce module implémente un serveur web HTTP simple utilisant http.server.
+
+Il définit une classe `HandlerRequests` qui gère les requêtes GET pour deux
+points de terminaison (endpoints) spécifiques :
+- `/data`: Retourne un objet JSON contenant des informations d'exemple sur un utilisateur.
+- `/info`: Retourne un objet JSON avec la version et une description de l'API.
+Toutes les autres requêtes GET reçoivent une réponse d'erreur 404 (Non trouvé).
+
+Le serveur écoute sur le port 8080.
+"""
 import http.server
 import json
 
