@@ -54,7 +54,7 @@ class HandlerRequests(http.server.BaseHTTPRequestHandler):
 
         elif self.path == "/info":
             self.send_response(200)
-            self.send_header("Content-Type", "application/json")
+            self.send_header("Content-Type", "text/plain")
             self.end_headers()
 
             datas = {
@@ -66,12 +66,9 @@ class HandlerRequests(http.server.BaseHTTPRequestHandler):
 
         elif self.path == "/status":
             self.send_response(200)
-            self.send_header("Content-Type", "application/json")
+            self.send_header("Content-Type", "text/plain")
             self.end_headers()
-
-            status_response = {"Status": "OK"}
-            json_status_response = json.dumps(status_response)
-            self.wfile.write(json_status_response.encode('utf-8'))
+            self.wfile.write(b"OK")
 
         else:
             self.send_response(404)
