@@ -11,8 +11,11 @@ Toutes les autres requêtes GET reçoivent une réponse d'erreur 404 (Non trouv�
 
 Le serveur écoute sur le port 8080.
 """
+import socketserver
 import http.server
 import json
+
+PORT = 8000
 
 
 class HandlerRequests(http.server.BaseHTTPRequestHandler):
@@ -80,8 +83,7 @@ class HandlerRequests(http.server.BaseHTTPRequestHandler):
             self.wfile.write(json_response.encode('utf-8'))
 
 
-if __name__ == "__main__":
-    """
+"""
     Point d'entrée principal du script.
 
     Initialise et démarre un serveur HTTP sur le port 8000.
@@ -89,6 +91,9 @@ if __name__ == "__main__":
     entrantes. Le serveur tourne indéfiniment jusqu'à ce qu'il soit arrêté
     manuellement.
     """
-    server_address = ('', 8000)
-    httpd = http.server.HTTPServer(server_address, HandlerRequests)
+
+Handler = http.server.SimpleHTTPRequestHandler
+
+with socketserver.TCPServer(("", PORT), Handler) as httpd:
+    print("serving at port", PORT)
     httpd.serve_forever()
