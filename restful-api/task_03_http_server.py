@@ -69,7 +69,7 @@ class HandlerRequests(http.server.BaseHTTPRequestHandler):
             self.send_header("Content-Type", "application/json")
             self.end_headers()
 
-            response = {"error": "Not Found"}
+            response = {"error": "Endpoint not found"}
             json_response = json.dumps(response)
             self.wfile.write(json_response.encode('utf-8'))
 
