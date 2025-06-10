@@ -89,7 +89,6 @@ class HandlerRequests(http.server.BaseHTTPRequestHandler):
     """
 
 
-
 with socketserver.TCPServer(("", PORT), HandlerRequests) as httpd:
     print(f"serving at port {PORT}")
     httpd.serve_forever()
