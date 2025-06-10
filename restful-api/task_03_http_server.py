@@ -76,11 +76,7 @@ class HandlerRequests(http.server.BaseHTTPRequestHandler):
         else:
             self.send_response(404)
             self.send_header("Content-Type", "application/json")
-            self.end_headers()
-
-            response = {"error": "Endpoint not found"}
-            json_response = json.dumps(response)
-            self.wfile.write(json_response.encode('utf-8'))
+            self.wfile.write(b"Endpoint not found")
 
 
 """
@@ -92,8 +88,8 @@ class HandlerRequests(http.server.BaseHTTPRequestHandler):
     manuellement.
     """
 
-Handler = http.server.SimpleHTTPRequestHandler
 
-with socketserver.TCPServer(("", PORT), Handler) as httpd:
-    print("serving at port", PORT)
+
+with socketserver.TCPServer(("", PORT), HandlerRequests) as httpd:
+    print(f"serving at port {PORT}")
     httpd.serve_forever()
