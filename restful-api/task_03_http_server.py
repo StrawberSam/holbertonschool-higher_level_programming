@@ -34,7 +34,13 @@ class HandlerRequests(http.server.BaseHTTPRequestHandler):
         - Si le chemin est "/info", retourne des informations sur l'API.
         - Pour tout autre chemin, retourne une erreur 404 (Not Found).
         """
-        if self.path == "/data":
+        if self.path == "/":
+            self.send_response(200)
+            self.send_header("Content-Type", "text/plain")
+            self.end_headers()
+            self.wfile.write(b"Hello, this is a simple API!")
+
+        elif self.path == "/data":
             self.send_response(200)
             self.send_header("Content-Type", "application/json")
             self.end_headers()
@@ -64,7 +70,7 @@ class HandlerRequests(http.server.BaseHTTPRequestHandler):
             json_status_response = json.dumps(status_response)
             self.wfile.write(json_status_response.encode('utf-8'))
 
-        elif self.path != "/data" and self.path != "/info":
+        else:
             self.send_response(404)
             self.send_header("Content-Type", "application/json")
             self.end_headers()
@@ -78,11 +84,11 @@ if __name__ == "__main__":
     """
     Point d'entrée principal du script.
 
-    Initialise et démarre un serveur HTTP sur le port 8080.
+    Initialise et démarre un serveur HTTP sur le port 8000.
     Le serveur utilise HandlerRequests pour gérer toutes les requêtes
     entrantes. Le serveur tourne indéfiniment jusqu'à ce qu'il soit arrêté
     manuellement.
     """
-    server_address = ('', 8080)
+    server_address = ('', 8000)
     httpd = http.server.HTTPServer(server_address, HandlerRequests)
     httpd.serve_forever()
