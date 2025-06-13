@@ -18,7 +18,6 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_jwt_extended import JWTManager, create_access_token, jwt_required
 from flask_jwt_extended import get_jwt_identity
 
-
 app = Flask(__name__)
 app.config["JWT_SECRET_KEY"] = "une_clé_très_secrète"
 jwt = JWTManager(app)
@@ -127,6 +126,21 @@ def admin_only():
         return "Admin Access: Granted"
     else:
         return {"error": "Admin access required"}, 403
+
+
+@jwt.unauthorized_loader
+def handle_unauthorized_error(err):
+    return jsonify({"error": "Missing or invalid token"}), 401
+
+
+@jwt.invalid_token_loader
+def handle_invalid_token_error(err):
+    return jsonify({"error": "Invalid token"}), 401
+
+
+@jwt.expired_token_loader
+def handle_expired_token_error(err):
+    return jsonify({"error": "Token has expired"}), 401
 
 
 if __name__ == '__main__':
