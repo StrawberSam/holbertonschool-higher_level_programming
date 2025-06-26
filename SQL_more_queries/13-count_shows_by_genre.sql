@@ -6,8 +6,8 @@
 -- Don’t display a genre that doesn’t have any shows linked
 -- Results must be sorted in descending order by the number of shows linked
 -- You can use only one SELECT statement
-SELECT tv_show_genres AS genre, COUNT(*) AS number_of_shows
+SELECT genre AS genre, COUNT(*) AS number_of_shows
 FROM tv_shows
-GROUP BY tv_show_genres
+GROUP BY genre
 HAVING COUNT(*) > 0
 ORDER BY COUNT(*) DESC;
