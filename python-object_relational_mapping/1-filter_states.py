@@ -6,7 +6,6 @@ Takes 3 arguments: mysql username, mysql password, and database name.
 Connects to a MySQL server running on localhost at port 3306.
 Results are sorted in ascending order by states.id.
 """
-
 import MySQLdb
 import sys
 
