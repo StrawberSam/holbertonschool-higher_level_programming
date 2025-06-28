@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 """
-Lists all states with a name starting with N from the database hbtn_0e_0_usa
+Lists all states with a name starting with N from the database hbtn_0e_0_usa.
+
+Takes 3 arguments: mysql username, mysql password, and database name.
+Connects to a MySQL server running on localhost at port 3306.
+Results are sorted in ascending order by states.id.
 """
 
 import MySQLdb
@@ -22,8 +26,11 @@ if __name__ == "__main__":
     # Exécution de la requête
     cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
 
+    # Récupération des résultats
+    rows = cursor.fetchall()
+
     # Affichage ligne par ligne
-    for row in cursor.fetchall():
+    for row in rows:
         print(row)
 
     # Fermeture du curseur et de la connexion
