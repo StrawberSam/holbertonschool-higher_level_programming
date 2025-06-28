@@ -1,5 +1,8 @@
-#!/usr/bin/python3
-"""Lists all states from the database hbtn_0e_0_usa"""
+#!/usr/bin/env python3
+"""
+Lists all states with a name starting with N from the database hbtn_0e_0_usa
+"""
+
 import MySQLdb
 import sys
 
@@ -19,11 +22,8 @@ if __name__ == "__main__":
     # Exécution de la requête
     cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
 
-    # Récupération des résultats
-    rows = cursor.fetchall()
-
     # Affichage ligne par ligne
-    for row in rows:
+    for row in cursor.fetchall():
         print(row)
 
     # Fermeture du curseur et de la connexion
