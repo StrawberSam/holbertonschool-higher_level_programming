@@ -10,8 +10,8 @@ Results are sorted in ascending order by states.id.
 import MySQLdb
 import sys
 
+
 if __name__ == "__main__":
-    # Connexion à la base
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
@@ -23,7 +23,6 @@ if __name__ == "__main__":
     # Création du curseur pour exécuter des requêtes
     cursor = db.cursor()
 
-    # Exécution de la requête
     cursor.execute("SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
 
     # Récupération des résultats
@@ -33,6 +32,5 @@ if __name__ == "__main__":
     for row in rows:
         print(row)
 
-    # Fermeture du curseur et de la connexion
     cursor.close()
     db.close()
