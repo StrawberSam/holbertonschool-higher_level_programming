@@ -5,19 +5,16 @@ import MySQLdb
 import sys
 
 if __name__ == "__main__":
-    # Récupération des arguments de la ligne de commande
-    username = sys.argv[1]
-    password = sys.argv[2]
-    db_name = sys.argv[3]
+    # Récupération de l'argument de la ligne de commande
     state_name = sys.argv[4]
 
     # Connexion à la base de données
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
-        user=username,
-        passwd=password,
-        db=db_name
+        user=sys.argv[1],
+        passwd=sys.argv[2],
+        db=sys.argv[3]
     )
 
     # Création du curseur pour exécuter des requêtes SQL
