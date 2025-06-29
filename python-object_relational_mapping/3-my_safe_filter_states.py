@@ -23,7 +23,7 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     # Requête paramétrée pour se protéger contre les injections SQL : %s
-    query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
+    query = "SELECT * FROM states WHERE BINARY name = %s ORDER BY id ASC"
     cursor.execute(query, (state_name,))
 
     results = cursor.fetchall()
