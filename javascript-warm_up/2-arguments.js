@@ -2,6 +2,7 @@
 
 // Récupère uniquement les arguments passés au script
 // (sans 'node' et le chemin du script)
+
 const args = process.argv.slice(2);
 
 if (args.length === 0) {
